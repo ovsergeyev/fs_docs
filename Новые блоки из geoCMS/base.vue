@@ -15,10 +15,13 @@ export default {
             type: Boolean,
             default: false
         },
+        title: {
+            type: String,
+            default: null
+        }
     },
     data() {
         return {
-            heading: null,
             hideAfterSearch: true,
         }
     },
@@ -38,7 +41,6 @@ export default {
                 try { content =  JSON.parse(this.content) }catch (e){}
                 console.log('content', content)
 
-                this.heading = content.heading || null
             } catch (e) {
                 console.log('Ошибка в методе setBlockParams', e)
             }
